@@ -14,42 +14,34 @@ function closeCompare(a, b, margin = 0) {
     return 1;
 
 // 3
-const or = (a, b) => {
-    if (a) {
-        return true;
+    function or(a, b) {
+        return !(!a && !b);
     }
-    if (b) {
-        return true;
-    }
-    return false;
-};
+// true, false = true how the function works because a! is falsy and b! this would give false for !a && !b but we use !(...) so the outcome of what is inside the round brackets we invert it false is turned into truthy
+// true, true = true
+// false, true = true
+// false, false = false
 
-const xor = (a, b) => {
-    if (a && !b) {
-        return true;
+    function xor(a, b) {
+        return !(!a && !b ) && !(a && b); // we check of at least one of the arguments is truthy and after that && we want to ensure that both a and be are not truthy at the same time
     }
-    if (!a && b) {
-        return true;
-    }
-    return false;
-};
 
 // 4
-function _if(bool, func1, func2) {
-    if (bool) {
-        return func1();
+    function _if(bool, func1, func2) {
+        if (bool) {
+            return func1();
+        }
+        return func2();
     }
-    return func2();
-}
 
 // 5
-function rentalCarCost(d) {
-    if (d >= 7) {
-        return (d * 40) - 50;
-    } else if (d >= 3) {
-        return (d * 40) - 20;
-    }
-    return d * 40;
+    function rentalCarCost(rentedDays) {
+        if (rentedDays >= 7) {
+            return (rentedDays * 40) - 50;
+        } else if (rentedDays >= 3) {
+            return (rentedDays * 40) - 20;
+        }
+        return rentedDays * 40;
     }
 }
 
@@ -186,5 +178,3 @@ function getTicketPrice(basePrice, daysUntilShow, isWeekend) {
 
 
 console.log(getTicketPrice(100,31,true)) // 100*0.9+15 = 105
-
-// end
