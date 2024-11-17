@@ -25,7 +25,15 @@ function closeCompare(a, b, margin = 0) {
     function xor(a, b) {
         return !(!a && !b ) && !(a && b); // we check of at least one of the arguments is truthy and after that && we want to ensure that both a and be are not truthy at the same time
     }
+/*  if I could use ||, I would've done it like this. The exercise stated that we shouldn't use ||, that's what made it really tricky.
+function or(a, b) {
+    return a || b;
+}
 
+function xor(a, b) {
+    return (a || b) && !(a && b);
+}
+ */
 // 4
     function _if(bool, func1, func2) {
         if (bool) {
@@ -36,12 +44,13 @@ function closeCompare(a, b, margin = 0) {
 
 // 5
     function rentalCarCost(rentedDays) {
+        const standrardCarRentalRateInUSD = 40
         if (rentedDays >= 7) {
-            return (rentedDays * 40) - 50;
+            return (rentedDays * standrardCarRentalRateInUSD) - 50;
         } else if (rentedDays >= 3) {
-            return (rentedDays * 40) - 20;
+            return (rentedDays * standrardCarRentalRateInUSD) - 20;
         }
-        return rentedDays * 40;
+        return rentedDays * standrardCarRentalRateInUSD;
     }
 }
 
@@ -60,7 +69,7 @@ function getRealFloor(n) {
 }
 
 // 7
-function rpsls(pl1,pl2) {
+function advancedRocksPaperScissors (pl1,pl2) {
     if (pl1 === pl2) {
         return "Draw!";
     }
