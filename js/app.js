@@ -23,8 +23,9 @@ function closeCompare(a, b, margin = 0) {
 // false, false = false
 
     function xor(a, b) {
-        return !(!a && !b ) && !(a && b); // we check of at least one of the arguments is truthy and after that && we want to ensure that both a and be are not truthy at the same time
+        return a !== b; // Simplified XOR logic
     }
+
 /*  if I could use ||, I would've done it like this. The exercise stated that we shouldn't use ||, that's what made it really tricky.
 function or(a, b) {
     return a || b;
