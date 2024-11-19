@@ -36,12 +36,13 @@ function xor(a, b) {
 }
  */
 // 4
-    function _if(bool, func1, func2) {
-        if (bool) {
-            return func1();
-        }
-        return func2();
+
+function condition(bool, func1, func2) {
+    if (bool) {
+        return func1();
     }
+    return func2();
+}
 
 // 5
     function rentalCarCost(rentedDays) {
@@ -56,17 +57,17 @@ function xor(a, b) {
 }
 
 // 6
-function getRealFloor(n) {
-    if (n < 0) {
+function getRealFloor(floor) {
+    if (floor < 0) {
         return n;
     }
-    else if (n === 0 || n === 1) {
+    else if (floor === 0 || floor === 1) {
         return n;
     }
-    else if (n < 13) {
+    else if (floor < 13) {
         return n - 1;
     }
-    return n - 2;
+    return floor - 2;
 }
 
 // 7
