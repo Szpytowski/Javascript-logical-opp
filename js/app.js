@@ -37,8 +37,8 @@ function xor(a, b) {
  */
 // 4
 
-function condition(bool, func1, func2) {
-    if (bool) {
+function _if(callFunc1IfTrue, func1, func2) {
+    if (callFunc1IfTrue) {
         return func1();
     }
     return func2();
